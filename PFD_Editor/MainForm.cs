@@ -54,6 +54,30 @@ namespace PFD_Editor
             treeView1.Nodes.Clear();
             treeView1.Nodes.Add(treeNodeworkProduct);
             treeView1.Nodes.Add(treeNodeProcess);
+            UpdateTreeView();
+        }
+
+        private void UpdateTreeView()
+        {
+            treeView1.Nodes[0].Nodes.Clear();
+            foreach(PfdWorkProduct workProduct in workProducts)
+            {
+                TreeNode treeNodeWorkProduct = new TreeNode();
+                treeNodeWorkProduct.Text = GetItemName(workProduct.id);
+                treeNodeWorkProduct.Tag = workProduct;
+                treeView1.Nodes[0].Nodes.Add(treeNodeWorkProduct);
+            }
+            treeView1.Nodes[0].Nodes.Add(addWorkProductNode);
+
+            treeView1.Nodes[1].Nodes.Clear();
+            foreach (PfdProcess process in processes)
+            {
+                TreeNode treeNodeProcess = new TreeNode();
+                treeNodeProcess.Text = GetItemName(process.id);
+                treeNodeProcess.Tag = process;
+                treeView1.Nodes[1].Nodes.Add(treeNodeProcess);
+            }
+            treeView1.Nodes[1].Nodes.Add(addProcessNode);
             treeView1.ExpandAll();
         }
 
@@ -69,12 +93,7 @@ namespace PFD_Editor
                 workProduct.subject = workProductElement.Element("Subject").Value;
                 workProduct.description = workProductElement.Element("Description").Value;
                 workProducts.Add(workProduct);
-                TreeNode treeNodeWorkProduct = new TreeNode();
-                treeNodeWorkProduct.Text = GetItemName(workProduct.id);
-                treeNodeWorkProduct.Tag = workProduct;
-                treeView1.Nodes[0].Nodes.Add(treeNodeWorkProduct);
             }
-            treeView1.Nodes[0].Nodes.Add(addWorkProductNode);
             foreach (XElement processElement in rootElement.Elements("Process"))
             {
                 PfdProcess process = new PfdProcess();
@@ -92,13 +111,8 @@ namespace PFD_Editor
                     process.outputIdList.Add(outputId);
                 }
                 processes.Add(process);
-                TreeNode treeNodeProcess = new TreeNode();
-                treeNodeProcess.Text = GetItemName(process.id);
-                treeNodeProcess.Tag = process;
-                treeView1.Nodes[1].Nodes.Add(treeNodeProcess);
             }
-            treeView1.Nodes[1].Nodes.Add(addProcessNode);
-            treeView1.ExpandAll();
+            UpdateTreeView();
         }
 
         private void SaveData(string filename)
