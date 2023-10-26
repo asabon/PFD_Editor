@@ -55,6 +55,10 @@ namespace PFD_Editor
             treeView1.Nodes.Add(treeNodeworkProduct);
             treeView1.Nodes.Add(treeNodeProcess);
             UpdateTreeView();
+            // 表示モード初期化
+            ノーマルToolStripMenuItem.Checked = true;
+            ズームToolStripMenuItem.Checked = false;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
         }
 
         private void UpdateTreeView()
@@ -453,6 +457,28 @@ namespace PFD_Editor
                             break;
                     }
                 }
+            }
+        }
+
+        private void ノーマルToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.SizeMode != PictureBoxSizeMode.Normal)
+            {
+                ノーマルToolStripMenuItem.Checked = true;
+                ズームToolStripMenuItem.Checked = false;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Normal;
+                UpdateDiagram();
+            }
+        }
+
+        private void ズームToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.SizeMode != PictureBoxSizeMode.Zoom)
+            {
+                ノーマルToolStripMenuItem.Checked = false;
+                ズームToolStripMenuItem.Checked = true;
+                pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+                UpdateDiagram();
             }
         }
     }

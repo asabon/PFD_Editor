@@ -48,6 +48,9 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ダイアグラム表示モードToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ズームToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ノーマルToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -120,8 +123,8 @@
             // plantUMLの設定ToolStripMenuItem
             // 
             this.plantUMLの設定ToolStripMenuItem.Name = "plantUMLの設定ToolStripMenuItem";
-            this.plantUMLの設定ToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.plantUMLの設定ToolStripMenuItem.Text = "PlantUMLの設定";
+            this.plantUMLの設定ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.plantUMLの設定ToolStripMenuItem.Text = "設定";
             this.plantUMLの設定ToolStripMenuItem.Click += new System.EventHandler(this.plantUMLの設定ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
@@ -138,6 +141,8 @@
             // 
             // 表示ToolStripMenuItem
             // 
+            this.表示ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ダイアグラム表示モードToolStripMenuItem});
             this.表示ToolStripMenuItem.Name = "表示ToolStripMenuItem";
             this.表示ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.表示ToolStripMenuItem.Text = "表示";
@@ -208,8 +213,32 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(534, 404);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // ダイアグラム表示モードToolStripMenuItem
+            // 
+            this.ダイアグラム表示モードToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ノーマルToolStripMenuItem,
+            this.ズームToolStripMenuItem});
+            this.ダイアグラム表示モードToolStripMenuItem.Name = "ダイアグラム表示モードToolStripMenuItem";
+            this.ダイアグラム表示モードToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ダイアグラム表示モードToolStripMenuItem.Text = "ダイアグラム表示モード";
+            // 
+            // ズームToolStripMenuItem
+            // 
+            this.ズームToolStripMenuItem.Name = "ズームToolStripMenuItem";
+            this.ズームToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ズームToolStripMenuItem.Text = "ズーム";
+            this.ズームToolStripMenuItem.Click += new System.EventHandler(this.ズームToolStripMenuItem_Click);
+            // 
+            // ノーマルToolStripMenuItem
+            // 
+            this.ノーマルToolStripMenuItem.Name = "ノーマルToolStripMenuItem";
+            this.ノーマルToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ノーマルToolStripMenuItem.Text = "ノーマル";
+            this.ノーマルToolStripMenuItem.Click += new System.EventHandler(this.ノーマルToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -259,6 +288,9 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ToolStripMenuItem ダイアグラム表示モードToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ノーマルToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ズームToolStripMenuItem;
     }
 }
 
