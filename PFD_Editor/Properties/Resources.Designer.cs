@@ -59,5 +59,41 @@ namespace PFD_Editor.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Add に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string Add {
+            get {
+                return ResourceManager.GetString("Add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Process に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ProcessName {
+            get {
+                return ResourceManager.GetString("ProcessName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   PFD Data に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string RootNodeName {
+            get {
+                return ResourceManager.GetString("RootNodeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   WorkProduct に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WorkProductName {
+            get {
+                return ResourceManager.GetString("WorkProductName", resourceCulture);
+            }
+        }
     }
 }

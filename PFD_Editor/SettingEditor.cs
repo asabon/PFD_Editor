@@ -20,5 +20,17 @@ namespace PFD_Editor
             treeView1.Nodes.Add(setting.treeRoot);
             treeView1.ExpandAll();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

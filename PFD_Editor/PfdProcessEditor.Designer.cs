@@ -96,16 +96,16 @@
             // 
             // listBoxInput
             // 
-            this.listBoxInput.FormattingEnabled = true;
             resources.ApplyResources(this.listBoxInput, "listBoxInput");
+            this.listBoxInput.FormattingEnabled = true;
             this.listBoxInput.Name = "listBoxInput";
             this.listBoxInput.SelectedIndexChanged += new System.EventHandler(this.listBoxInput_SelectedIndexChanged);
             this.listBoxInput.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBoxInput_MouseDoubleClick);
             // 
             // listBoxOutput
             // 
-            this.listBoxOutput.FormattingEnabled = true;
             resources.ApplyResources(this.listBoxOutput, "listBoxOutput");
+            this.listBoxOutput.FormattingEnabled = true;
             this.listBoxOutput.Name = "listBoxOutput";
             // 
             // label4
@@ -148,8 +148,8 @@
             // 
             // listBoxWorkProduct
             // 
-            this.listBoxWorkProduct.FormattingEnabled = true;
             resources.ApplyResources(this.listBoxWorkProduct, "listBoxWorkProduct");
+            this.listBoxWorkProduct.FormattingEnabled = true;
             this.listBoxWorkProduct.Name = "listBoxWorkProduct";
             // 
             // label6

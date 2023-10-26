@@ -117,16 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Add</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>キャンセル</value>
   </data>
-  <data name="ProcessName" xml:space="preserve">
-    <value>Process</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 12</value>
   </data>
-  <data name="RootNodeName" xml:space="preserve">
-    <value>PFD Data</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>説明</value>
   </data>
-  <data name="WorkProductName" xml:space="preserve">
-    <value>WorkProduct</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 12</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>タイトル</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>成果物 編集</value>
   </data>
 </root>

@@ -38,19 +38,20 @@ namespace PFD_Editor
             processEditor = new PfdProcessEditor();
             LoadSetting();
             InitializeData();
-            treeNode = new TreeNode("PFDデータ");
+            treeNode = new TreeNode(Properties.Resources.RootNodeName);
         }
 
         private void InitializeData()
         {
-            addWorkProductNode = new TreeNode("(追加)");
-            addProcessNode = new TreeNode("(追加)");
+            String addLabel = "(" + Properties.Resources.Add + ")";
+            addWorkProductNode = new TreeNode(addLabel);
+            addProcessNode = new TreeNode(addLabel);
             // データの初期化
             workProducts = new List<PfdWorkProduct>();
             processes = new List<PfdProcess>();
             // ツリーを生成
-            TreeNode treeNodeworkProduct = new TreeNode("成果物");
-            TreeNode treeNodeProcess = new TreeNode("プロセス");
+            TreeNode treeNodeworkProduct = new TreeNode(Properties.Resources.WorkProductName);
+            TreeNode treeNodeProcess = new TreeNode(Properties.Resources.ProcessName);
             treeView1.Nodes.Clear();
             treeView1.Nodes.Add(treeNodeworkProduct);
             treeView1.Nodes.Add(treeNodeProcess);
