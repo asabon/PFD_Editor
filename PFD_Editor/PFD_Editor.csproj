@@ -84,6 +84,12 @@
       <DependentUpon>VersionInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="PfdWorkProduct.cs" />
+    <EmbeddedResource Include="MainForm.ja-JP.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ja.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,7 +99,6 @@
     <EmbeddedResource Include="PfdWorkProductEditor.resx">
       <DependentUpon>PfdWorkProductEditor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.ja-JP.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

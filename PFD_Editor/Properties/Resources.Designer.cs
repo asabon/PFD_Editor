@@ -59,14 +59,5 @@ namespace PFD_Editor.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   PFD Editor に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        internal static string ApplicationName {
-            get {
-                return ResourceManager.GetString("ApplicationName", resourceCulture);
-            }
-        }
     }
 }
