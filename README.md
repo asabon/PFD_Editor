@@ -2,7 +2,12 @@
 
 ## Overview
 
+Editor PFD (Process Flow Diagram).
+
 ## Requirement
+
+- Windows
+- Graphviz
 
 ## Usage
 
