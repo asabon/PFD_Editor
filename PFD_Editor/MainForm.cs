@@ -481,5 +481,17 @@ namespace PFD_Editor
                 UpdateDiagram();
             }
         }
+
+        private void treeView1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        }
+
+        private void treeView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                // Press delete key
+            }
+        }
     }
 }
