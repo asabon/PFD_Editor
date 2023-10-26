@@ -2,12 +2,12 @@
 
 ## Overview
 
-Editor PFD (Process Flow Diagram).
+PFD (Process Flow Diagram) editor.
 
 ## Requirement
 
 - Windows
-- Graphviz
+- Graphviz ( https://graphviz.org/ )
 
 ## Usage
 
@@ -18,6 +18,4 @@ Editor PFD (Process Flow Diagram).
 ## Author
 
 ## License
-
-This is PFD ( Process Flow Diagram ) Editor.
 
