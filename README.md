@@ -3,7 +3,7 @@
 
 ## Overview
 
-PFD (Process Flow Diagram) editor.
+Simple PFD (Process Flow Diagram) editor.
 
 ## Requirement
 
