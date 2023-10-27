@@ -13,16 +13,27 @@ namespace PFD_Editor
 {
     public partial class SettingEditor : Form
     {
+        private Setting setting;
+
         public SettingEditor()
         {
             InitializeComponent();
-            Setting setting = new Setting();
-            treeView1.Nodes.Add(setting.treeRoot);
-            treeView1.ExpandAll();
+        }
+
+        public void SetSetting(Setting setting)
+        {
+            this.setting = setting;
+            this.textBox1.Text = setting.graphvizExe;
+        }
+
+        public Setting GetSetting()
+        {
+            return this.setting;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.setting.graphvizExe = this.textBox1.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -31,6 +42,16 @@ namespace PFD_Editor
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string graphvizExe = openFileDialog1.FileName;
+                textBox1.Text = graphvizExe;
+                this.setting.graphvizExe = graphvizExe;
+            }
         }
     }
 }

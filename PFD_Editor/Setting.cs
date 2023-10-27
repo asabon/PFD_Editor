@@ -7,33 +7,19 @@ using System.Windows.Forms;
 
 namespace PFD_Editor
 {
-    internal class Setting
+    public class Setting
     {
-        public TreeNode treeRoot { get; set; }
+        public string graphvizExe { get; set; }
+        public string xmlFileName { get; set; }
+        public string dotFileName { get; set; }
+        public string pngFileName { get; set; }
 
-        public Setting() 
+        public Setting()
         {
-            treeRoot = new TreeNode();
-
-            TreeNode plantUml = new TreeNode();
-            plantUml.Text = "PlantUML";
-
-            TreeNode plantUmlPath = new TreeNode();
-            plantUmlPath.Text = "path";
-            // "c:\\Tools\\PlantUML"
-
-            TreeNode plantUmlJar = new TreeNode();
-            plantUmlJar.Text = "jar";
-            // "plantuml-1.2023.11.jar"
-
-            treeRoot.Nodes.Add(plantUml);
-            plantUml.Nodes.Add(plantUmlPath);
-            plantUml.Nodes.Add(plantUmlJar);
-        }
-
-        public string GetValue(string name)
-        {
-            return "";
+            this.graphvizExe = "C:\\Program Files\\Graphviz\\bin\\dot.exe";
+            this.xmlFileName = "";
+            this.dotFileName = "temp.dot";
+            this.pngFileName = "temp.png";
         }
 
         public void SaveSetting(string fileName)
