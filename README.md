@@ -12,6 +12,14 @@ Simple PFD (Process Flow Diagram) editor.
 
 ## Usage
 
+### Install Graphviz
+
+Install Graphviz from "https://graphviz.org/"
+
+### Set graphviz path to PFD Editor
+
+### Edit PFD
+
 ## Features
 
 ## Reference
