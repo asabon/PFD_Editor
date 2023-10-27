@@ -25,6 +25,12 @@ You can set graphviz path to PFD Editor by
 
 ### Edit PFD
 
+#### 1. Add work product
+
+#### 2. Add process
+
+#### 3. Connect work product to process
+
 ## Features
 
 ## Reference
