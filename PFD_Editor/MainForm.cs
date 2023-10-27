@@ -270,11 +270,11 @@ namespace PFD_Editor
             writer.WriteLine("    ]");
             foreach (PfdWorkProduct workProduct in workProducts)
             {
-                writer.WriteLine("    item" + workProduct.id.ToString() + " [label = " + workProduct.subject + ", shape = box];");
+                writer.WriteLine("    item" + workProduct.id.ToString() + " [label = \"" + workProduct.subject + "\", shape = box];");
             }
             foreach (PfdProcess process in processes)
             {
-                writer.WriteLine("    item" + process.id.ToString() + " [label = " + process.subject + "];");
+                writer.WriteLine("    item" + process.id.ToString() + " [label = \"" + process.subject + "\"];");
             }
             foreach (PfdProcess process in processes)
             {
