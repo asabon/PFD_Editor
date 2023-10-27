@@ -18,6 +18,11 @@ Install Graphviz from "https://graphviz.org/"
 
 ### Set graphviz path to PFD Editor
 
+You can set graphviz path to PFD Editor by
+
+- File -> Setting
+- ファイル -> 設定
+
 ### Edit PFD
 
 ## Features
