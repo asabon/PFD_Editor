@@ -19,4 +19,4 @@ jobs:
         uses: microsoft/setup-msbuild@v1.0.2
 
       - run: |
-          msbuild PFD_Editor.sln /t:clean /p:Configuration=Release;Platform="Any CPU"
+          msbuild PFD_Editor.sln /t:clean /p:Configuration=Release
