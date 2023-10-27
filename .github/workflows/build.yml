@@ -1,0 +1,24 @@
+
+name: MSBuild
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+
+      - run: |
+          msbuild PFD_Editor.sln /t:clean /p:Configuration=Release
+
+      - run: |
+          msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
