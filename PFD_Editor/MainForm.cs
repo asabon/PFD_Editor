@@ -23,7 +23,7 @@ namespace PFD_Editor
         private SettingEditor settingEditor;
         private PfdWorkProductEditor workProductEditor;
         private PfdProcessEditor processEditor;
-        private Config config;
+        private Setting setting;
 
         private List<PfdWorkProduct> workProducts;
         private List<PfdProcess> processes;
@@ -31,8 +31,7 @@ namespace PFD_Editor
         public MainForm()
         {
             InitializeComponent();
-            config = new Config();
-            config.LoadConfig("PfdEditor.ini");
+            setting = new Setting();
             settingEditor = new SettingEditor();
             workProductEditor = new PfdWorkProductEditor();
             processEditor = new PfdProcessEditor();
@@ -158,37 +157,33 @@ namespace PFD_Editor
             writer.Close();
         }
 
-        private void UpdateData()
-        {
-        }
-
         private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             InitializeData();
             UpdateTitle("new");
-            config.xmlFileName = "";
+            setting.xmlFileName = "";
         }
 
         private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                config.xmlFileName = openFileDialog1.FileName;
-                LoadData(config.xmlFileName);
-                UpdateTitle(config.xmlFileName);
+                setting.xmlFileName = openFileDialog1.FileName;
+                LoadData(setting.xmlFileName);
+                UpdateTitle(setting.xmlFileName);
                 UpdateDiagram();
             }
         }
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (config.xmlFileName == "")
+            if (setting.xmlFileName == "")
             {
                 名前を付けて保存ToolStripMenuItem_Click(sender, e);
             }
             else
             {
-                SaveData(config.xmlFileName);
+                SaveData(setting.xmlFileName);
             }
         }
 
@@ -196,9 +191,9 @@ namespace PFD_Editor
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                config.xmlFileName = saveFileDialog1.FileName;
-                SaveData(config.xmlFileName);
-                UpdateTitle(config.xmlFileName);
+                setting.xmlFileName = saveFileDialog1.FileName;
+                SaveData(setting.xmlFileName);
+                UpdateTitle(setting.xmlFileName);
             }
 
         }
@@ -257,7 +252,7 @@ namespace PFD_Editor
         {
             //Encoding enc = Encoding.GetEncoding("Shift-JIS");
             //StreamWriter writer = new StreamWriter(config.dotFileName, false, enc);
-            StreamWriter writer = new StreamWriter(config.dotFileName, false);
+            StreamWriter writer = new StreamWriter(setting.dotFileName, false);
             writer.WriteLine("digraph PFD {");
             writer.WriteLine("    graph [");
             writer.WriteLine("        fontname = \"MS Gothic\"");
@@ -291,80 +286,30 @@ namespace PFD_Editor
             writer.Close();
         }
 
-        private void CreateWorkUmlFile()
-        {
-            Encoding enc = Encoding.GetEncoding("UTF-8");
-            StreamWriter writer = new StreamWriter(config.umlFileName, false, enc);
-            writer.WriteLine("@startuml");
-            foreach(PfdWorkProduct workProduct in workProducts)
-            {
-                writer.WriteLine("    usecase \"" + workProduct.subject + "\" as item" + workProduct.id);
-            }
-            foreach (PfdProcess process in processes)
-            {
-                writer.WriteLine("    usecase \"" + process.subject + "\" as item" + process.id);
-            }
-            foreach(PfdProcess process in processes)
-            {
-                foreach(int inputId in process.inputIdList)
-                {
-                    writer.WriteLine("   item" + inputId + " --> item" + process.id);
-                }
-                foreach (int outputId in process.outputIdList)
-                {
-                    writer.WriteLine("   item" + process.id + " --> item" + outputId);
-                }
-            }
-            writer.WriteLine("@enduml");
-            writer.Close();
-        }
-
         private void UpdateDiagram()
         {
-            switch(config.generator)
-            {
-                case Config.Generator.Graphviz:
-                    CreateWorkDotFile();
-                    break;
-                case Config.Generator.PlantUML:
-                    CreateWorkUmlFile();
-                    break;
-                default:
-                    // Error
-                    return;
-            }
+            CreateWorkDotFile();
             ProcessStartInfo psi = new ProcessStartInfo();
             psi.FileName = "cmd";
-
-            switch (config.generator)
-            {
-                case Config.Generator.Graphviz:
-                    psi.Arguments = "/c \"" + config.graphvizExe + "\" -Tpng -o " + config.pngFileName + " " + config.dotFileName;
-                    config.pngFileName = config.dotFileName.Replace(".dot", ".png");
-                    break;
-                case Config.Generator.PlantUML:
-                    psi.Arguments = "/c " + config.plantUmlPath + "\\" + config.plantUmlJar + " " + config.umlFileName + " -charset UTF-8";
-                    config.pngFileName = config.umlFileName.Replace(".uml", ".png");
-                    break;
-                default:
-                    break;
-            }
-            psi.CreateNoWindow = true; // コンソール開かない
-            psi.UseShellExecute = false; // シェル機能使用しない
-            psi.RedirectStandardOutput = true; // 標準出力をリダイレクト
+            psi.Arguments = "/c \"" + setting.graphvizExe + "\" -Tpng -o " + setting.pngFileName + " " + setting.dotFileName;
+            setting.pngFileName = setting.dotFileName.Replace(".dot", ".png");
+            psi.CreateNoWindow = true;
+            psi.UseShellExecute = false;
+            psi.RedirectStandardOutput = true;
             toolStripMenuItem1.Text = "working ...";
             Process process_ = Process.Start(psi);
             process_.WaitForExit();
             process_.Close();
             toolStripMenuItem1.Text = "";
-            pictureBox1.ImageLocation = config.pngFileName;
+            pictureBox1.ImageLocation = setting.pngFileName;
         }
 
         private void plantUMLの設定ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            settingEditor.SetSetting(this.setting);
             if (settingEditor.ShowDialog() == DialogResult.OK)
             {
-                //SaveConfig();
+                this.setting = settingEditor.GetSetting();
             }
         }
 
