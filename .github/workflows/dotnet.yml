@@ -9,7 +9,6 @@ on:
 
 jobs:
   build:
-
     runs-on: windows-2019
     steps:
       - name: Checkout
@@ -20,3 +19,6 @@ jobs:
 
       - run: |
           msbuild PFD_Editor.sln /t:clean /p:Configuration=Release
+
+      - run: |
+          msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
