@@ -18,18 +18,27 @@ Install Graphviz from "https://graphviz.org/"
 
 ### Set graphviz path to PFD Editor
 
-You can set graphviz path to PFD Editor by
+Set graphviz (dot.exe) path to PFD Editor by following menu.
 
 - File -> Setting
 - ファイル -> 設定
 
 ### Edit PFD
 
+Work product is shown by "rectangle".
+Process is shown by "circle".
+
 #### 1. Add work product
+
+1. Double click "(add)" in work product tree.
+2. Set work product information in "work product edit" dialog.
+3. Click OK button.
 
 #### 2. Add process
 
-#### 3. Connect work product to process
+1. Double click "(add)" in process tree.
+2. Set work product information in "process edit" dialog.
+3. Click OK button.
 
 ## Features
 
