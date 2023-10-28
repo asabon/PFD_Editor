@@ -47,6 +47,11 @@
             this.buttonAddOutput = new System.Windows.Forms.Button();
             this.listBoxWorkProduct = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,6 +95,7 @@
             // buttonCancel
             // 
             resources.ApplyResources(this.buttonCancel, "buttonCancel");
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.button2_Click);
@@ -157,22 +163,34 @@
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.listBoxInput);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonAddInput);
+            this.splitContainer1.Panel1.Controls.Add(this.buttonDeleteInput);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.listBoxOutput);
+            this.splitContainer1.Panel2.Controls.Add(this.buttonAddOutput);
+            this.splitContainer1.Panel2.Controls.Add(this.buttonDeleteOutput);
+            // 
             // PfdProcessEditor
             // 
             this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonCancel;
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listBoxWorkProduct);
-            this.Controls.Add(this.buttonDeleteOutput);
-            this.Controls.Add(this.buttonAddOutput);
-            this.Controls.Add(this.buttonDeleteInput);
-            this.Controls.Add(this.buttonAddInput);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.listBoxOutput);
-            this.Controls.Add(this.listBoxInput);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.textBoxId);
@@ -184,6 +202,10 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PfdProcessEditor";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +231,6 @@
         private System.Windows.Forms.Button buttonAddOutput;
         private System.Windows.Forms.ListBox listBoxWorkProduct;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
