@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,8 +45,11 @@ namespace PFD_Editor
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonSelect_Click(object sender, EventArgs e)
         {
+            openFileDialog1.DefaultExt = "exe";
+            openFileDialog1.InitialDirectory = Path.GetDirectoryName(this.textBox1.Text);
+            openFileDialog1.FileName = Path.GetFileName(this.textBox1.Text);
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string graphvizExe = openFileDialog1.FileName;

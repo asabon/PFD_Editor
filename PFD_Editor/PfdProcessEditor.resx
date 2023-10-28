@@ -146,6 +146,9 @@
   <data name="listBoxWorkProduct.Location" type="System.Drawing.Point, System.Drawing">
     <value>14, 383</value>
   </data>
+  <data name="&gt;&gt;buttonCancel.Name" xml:space="preserve">
+    <value>buttonCancel</value>
+  </data>
   <data name="buttonAddOutput.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
   </data>
@@ -160,6 +163,9 @@
   </data>
   <data name="buttonAddOutput.Text" xml:space="preserve">
     <value>Add</value>
+  </data>
+  <data name="listBoxWorkProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>360, 172</value>
   </data>
   <data name="&gt;&gt;buttonDeleteOutput.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -218,6 +224,9 @@
   <data name="buttonAddInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 331</value>
   </data>
+  <data name="buttonCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="buttonDeleteOutput.Text" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -227,8 +236,8 @@
   <data name="&gt;&gt;listBoxWorkProduct.Name" xml:space="preserve">
     <value>listBoxWorkProduct</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 12</value>
+  <data name="&gt;&gt;textBoxDescription.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="buttonDeleteInput.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -242,17 +251,23 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>PfdProcessEditor</value>
   </data>
-  <data name="listBoxWorkProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 172</value>
+  <data name="&gt;&gt;buttonAddOutput.Name" xml:space="preserve">
+    <value>buttonAddOutput</value>
   </data>
   <data name="buttonDeleteInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
+  </data>
+  <data name="buttonOK.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;buttonDeleteInput.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
   <data name="&gt;&gt;button2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxId.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;listBoxOutput.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -272,6 +287,9 @@
   <data name="listBoxInput.ItemHeight" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
+  <data name="&gt;&gt;buttonCancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="textBoxId.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
@@ -280,6 +298,9 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>ID</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -310,6 +331,12 @@
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
+  </data>
+  <data name="buttonCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 568</value>
+  </data>
+  <data name="&gt;&gt;buttonOK.Name" xml:space="preserve">
+    <value>buttonOK</value>
   </data>
   <data name="listBoxInput.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 136</value>
@@ -353,8 +380,8 @@
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;buttonOK.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 12</value>
@@ -368,8 +395,14 @@
   <data name="buttonAddInput.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;buttonOK.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="buttonOK.Location" type="System.Drawing.Point, System.Drawing">
+    <value>223, 568</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -413,14 +446,14 @@
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>195, 174</value>
   </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 12</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 12</value>
   </data>
-  <data name="&gt;&gt;listBoxInput.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 12</value>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -434,8 +467,8 @@
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBoxDescription.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;buttonCancel.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="&gt;&gt;listBoxOutput.ZOrder" xml:space="preserve">
     <value>8</value>
@@ -449,8 +482,8 @@
   <data name="buttonDeleteInput.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 331</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 59</value>
+  <data name="&gt;&gt;buttonOK.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -485,9 +518,6 @@
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="&gt;&gt;buttonAddOutput.Name" xml:space="preserve">
-    <value>buttonAddOutput</value>
-  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Description</value>
   </data>
@@ -503,6 +533,9 @@
   <data name="&gt;&gt;button1.Name" xml:space="preserve">
     <value>button1</value>
   </data>
+  <data name="&gt;&gt;buttonCancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Output</value>
   </data>
@@ -515,8 +548,8 @@
   <data name="textBoxDescription.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;listBoxOutput.Name" xml:space="preserve">
-    <value>listBoxOutput</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 12</value>
   </data>
   <data name="&gt;&gt;textBoxSubject.Parent" xml:space="preserve">
     <value>$this</value>
@@ -524,8 +557,8 @@
   <data name="listBoxOutput.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;textBoxId.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;listBoxInput.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>16</value>
@@ -551,10 +584,16 @@
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
   </data>
+  <data name="&gt;&gt;listBoxOutput.Name" xml:space="preserve">
+    <value>listBoxOutput</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
   <data name="&gt;&gt;buttonDeleteInput.Name" xml:space="preserve">
     <value>buttonDeleteInput</value>
   </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="buttonOK.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
   <data name="listBoxOutput.Location" type="System.Drawing.Point, System.Drawing">
@@ -565,6 +604,9 @@
   </data>
   <data name="buttonAddInput.Text" xml:space="preserve">
     <value>Add</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 59</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
