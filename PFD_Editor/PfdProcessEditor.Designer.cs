@@ -35,8 +35,8 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonOK = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
             this.listBoxInput = new System.Windows.Forms.ListBox();
             this.listBoxOutput = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -80,19 +80,19 @@
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.ReadOnly = true;
             // 
-            // button1
+            // buttonOK
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.buttonOK, "buttonOK");
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // buttonCancel
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.buttonCancel, "buttonCancel");
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // listBoxInput
             // 
@@ -159,8 +159,10 @@
             // 
             // PfdProcessEditor
             // 
+            this.AcceptButton = this.buttonOK;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonCancel;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.listBoxWorkProduct);
             this.Controls.Add(this.buttonDeleteOutput);
@@ -171,14 +173,16 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.listBoxOutput);
             this.Controls.Add(this.listBoxInput);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDescription);
             this.Controls.Add(this.textBoxSubject);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PfdProcessEditor";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,8 +197,8 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxId;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonOK;
+        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.ListBox listBoxInput;
         private System.Windows.Forms.ListBox listBoxOutput;
         private System.Windows.Forms.Label label4;

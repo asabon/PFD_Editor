@@ -130,7 +130,10 @@
   <data name="label2.Text" xml:space="preserve">
     <value>説明</value>
   </data>
-  <data name="button2.Text" xml:space="preserve">
+  <data name="buttonOK.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="buttonCancel.Text" xml:space="preserve">
     <value>キャンセル</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
