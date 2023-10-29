@@ -1,5 +1,5 @@
 
-name: Build
+name: Test
 
 on:
   push:
@@ -17,8 +17,5 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
 
-      - run: |
-          msbuild PFD_Editor.sln /t:clean /p:Configuration=Release
-
-      - run: |
-          msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
+      - run: dotnet build
+      - run: dotnet test
