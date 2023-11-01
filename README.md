@@ -22,12 +22,11 @@ Install Graphviz from "https://graphviz.org/"
 Set graphviz (dot.exe) path to PFD Editor by following menu.
 
 - File -> Setting
-- ファイル -> 設定
 
 ### Edit PFD
 
-Work product is shown by "rectangle".
-Process is shown by "circle".
+"Work product" is shown by "rectangle".
+"Process" is shown by "circle".
 
 #### 1. Add work product
 
