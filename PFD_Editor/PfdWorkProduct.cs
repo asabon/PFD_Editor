@@ -15,5 +15,13 @@ namespace PFD_Editor
             this.description = "";
             this.type = PfdItemType.WorkProduct;
         }
+
+        public PfdWorkProduct(PfdWorkProduct original)
+        {
+            this.id = original.id;
+            this.subject = original.subject;
+            this.description = original.description;
+            this.type = PfdItemType.WorkProduct;
+        }
     }
 }
