@@ -1,11 +1,11 @@
 
 name: Test
 
-#on:
-#  push:
-#    branches: [ "master" ]
-#  pull_request:
-#    branches: [ "master" ]
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -17,6 +17,9 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.3.1
 
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /help'
+      - run: |
+          mstest PFD_Editor.sln
 
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\dotnet test" --help'
+#      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /help'
+
+#      - run: '& "$(vswhere -property installationPath)\Common7\IDE\dotnet test" --help'
