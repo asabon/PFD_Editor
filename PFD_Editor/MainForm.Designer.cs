@@ -117,25 +117,25 @@
             // 
             resources.ApplyResources(this.ファイルを開くToolStripMenuItem, "ファイルを開くToolStripMenuItem");
             this.ファイルを開くToolStripMenuItem.Name = "ファイルを開くToolStripMenuItem";
-            this.ファイルを開くToolStripMenuItem.Click += new System.EventHandler(this.新規作成ToolStripMenuItem_Click);
+            this.ファイルを開くToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_CreateNewFile_Click);
             // 
             // 開くToolStripMenuItem
             // 
             resources.ApplyResources(this.開くToolStripMenuItem, "開くToolStripMenuItem");
             this.開くToolStripMenuItem.Name = "開くToolStripMenuItem";
-            this.開くToolStripMenuItem.Click += new System.EventHandler(this.開くToolStripMenuItem_Click);
+            this.開くToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_OpenFile_Click);
             // 
             // 保存ToolStripMenuItem
             // 
             resources.ApplyResources(this.保存ToolStripMenuItem, "保存ToolStripMenuItem");
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_SaveFile_Click);
             // 
             // 名前を付けて保存ToolStripMenuItem
             // 
             resources.ApplyResources(this.名前を付けて保存ToolStripMenuItem, "名前を付けて保存ToolStripMenuItem");
             this.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem";
-            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.名前を付けて保存ToolStripMenuItem_Click);
+            this.名前を付けて保存ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_SaveFileWithName_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -146,7 +146,7 @@
             // 
             resources.ApplyResources(this.plantUMLの設定ToolStripMenuItem, "plantUMLの設定ToolStripMenuItem");
             this.plantUMLの設定ToolStripMenuItem.Name = "plantUMLの設定ToolStripMenuItem";
-            this.plantUMLの設定ToolStripMenuItem.Click += new System.EventHandler(this.plantUMLの設定ToolStripMenuItem_Click);
+            this.plantUMLの設定ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Setting_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -157,7 +157,7 @@
             // 
             resources.ApplyResources(this.終了ToolStripMenuItem, "終了ToolStripMenuItem");
             this.終了ToolStripMenuItem.Name = "終了ToolStripMenuItem";
-            this.終了ToolStripMenuItem.Click += new System.EventHandler(this.終了ToolStripMenuItem_Click);
+            this.終了ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Exit_Click);
             // 
             // 表示ToolStripMenuItem
             // 
@@ -178,13 +178,13 @@
             // 
             resources.ApplyResources(this.ノーマルToolStripMenuItem, "ノーマルToolStripMenuItem");
             this.ノーマルToolStripMenuItem.Name = "ノーマルToolStripMenuItem";
-            this.ノーマルToolStripMenuItem.Click += new System.EventHandler(this.ノーマルToolStripMenuItem_Click);
+            this.ノーマルToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Normal_Click);
             // 
             // ズームToolStripMenuItem
             // 
             resources.ApplyResources(this.ズームToolStripMenuItem, "ズームToolStripMenuItem");
             this.ズームToolStripMenuItem.Name = "ズームToolStripMenuItem";
-            this.ズームToolStripMenuItem.Click += new System.EventHandler(this.ズームToolStripMenuItem_Click);
+            this.ズームToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Zoom_Click);
             // 
             // ヘルプToolStripMenuItem
             // 
@@ -197,7 +197,7 @@
             // 
             resources.ApplyResources(this.バージョン情報ToolStripMenuItem, "バージョン情報ToolStripMenuItem");
             this.バージョン情報ToolStripMenuItem.Name = "バージョン情報ToolStripMenuItem";
-            this.バージョン情報ToolStripMenuItem.Click += new System.EventHandler(this.バージョン情報ToolStripMenuItem_Click);
+            this.バージョン情報ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_VersionInfo_Click);
             // 
             // openFileDialog1
             // 

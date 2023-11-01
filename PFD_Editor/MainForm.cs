@@ -157,14 +157,14 @@ namespace PFD_Editor
             writer.Close();
         }
 
-        private void 新規作成ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_CreateNewFile_Click(object sender, EventArgs e)
         {
             InitializeData();
             UpdateTitle("new");
             setting.xmlFileName = "";
         }
 
-        private void 開くToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_OpenFile_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -175,11 +175,11 @@ namespace PFD_Editor
             }
         }
 
-        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_SaveFile_Click(object sender, EventArgs e)
         {
             if (setting.xmlFileName == "")
             {
-                名前を付けて保存ToolStripMenuItem_Click(sender, e);
+                ToolStripMenuItem_SaveFileWithName_Click(sender, e);
             }
             else
             {
@@ -187,7 +187,7 @@ namespace PFD_Editor
             }
         }
 
-        private void 名前を付けて保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_SaveFileWithName_Click(object sender, EventArgs e)
         {
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -198,12 +198,12 @@ namespace PFD_Editor
 
         }
 
-        private void 終了ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void バージョン情報ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_VersionInfo_Click(object sender, EventArgs e)
         {
             VersionInfo versionInfo = new VersionInfo();
             versionInfo.ShowDialog();
@@ -304,7 +304,7 @@ namespace PFD_Editor
             pictureBox1.ImageLocation = setting.pngFileName;
         }
 
-        private void plantUMLの設定ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Setting_Click(object sender, EventArgs e)
         {
             settingEditor.SetSetting(this.setting);
             if (settingEditor.ShowDialog() == DialogResult.OK)
@@ -406,7 +406,7 @@ namespace PFD_Editor
             }
         }
 
-        private void ノーマルToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Normal_Click(object sender, EventArgs e)
         {
             if (pictureBox1.SizeMode != PictureBoxSizeMode.Normal)
             {
@@ -417,7 +417,7 @@ namespace PFD_Editor
             }
         }
 
-        private void ズームToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ToolStripMenuItem_Zoom_Click(object sender, EventArgs e)
         {
             if (pictureBox1.SizeMode != PictureBoxSizeMode.Zoom)
             {
