@@ -17,10 +17,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.3.1
 
-      - run: |
+      - name: Build & Test
+        run: |
           msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
-
-      - run: |
           '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\bin\Debug\UnitTestProject.dll'
-
-#      - run: '& "$(vswhere -property installationPath)\Common7\IDE\dotnet test" --help'
