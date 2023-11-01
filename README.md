@@ -1,4 +1,5 @@
-[![MSBuild](https://github.com/asabon/PFD_Editor/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/asabon/PFD_Editor/actions/workflows/build.yml)
+[![Build](https://github.com/asabon/PFD_Editor/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/asabon/PFD_Editor/actions/workflows/build.yml)
+[![Test](https://github.com/asabon/PFD_Editor/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/asabon/PFD_Editor/actions/workflows/test.yml)
 # PFD_Editor
 
 ## Overview
