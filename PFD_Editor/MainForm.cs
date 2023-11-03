@@ -31,7 +31,7 @@ namespace PFD_Editor
         public MainForm()
         {
             InitializeComponent();
-            setting = new Setting();
+            setting = new Setting("PFD_Editor.json");
             settingEditor = new SettingEditor();
             workProductEditor = new PfdWorkProductEditor();
             processEditor = new PfdProcessEditor();
