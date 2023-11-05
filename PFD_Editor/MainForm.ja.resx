@@ -118,17 +118,74 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ファイルを開くToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="ファイルを開くToolStripMenuItem.Text" xml:space="preserve">
+    <value>新規作成</value>
+  </data>
+  <data name="開くToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="開くToolStripMenuItem.Text" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="保存ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="保存ToolStripMenuItem.Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="名前を付けて保存ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="名前を付けて保存ToolStripMenuItem.Text" xml:space="preserve">
+    <value>名前を付けて保存</value>
+  </data>
+  <data name="plantUMLの設定ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="plantUMLの設定ToolStripMenuItem.Text" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="終了ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 22</value>
+  </data>
+  <data name="終了ToolStripMenuItem.Text" xml:space="preserve">
+    <value>終了</value>
+  </data>
   <data name="ファイルToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 20</value>
   </data>
   <data name="ファイルToolStripMenuItem.Text" xml:space="preserve">
     <value>ファイル</value>
   </data>
+  <data name="ノーマルToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="ノーマルToolStripMenuItem.Text" xml:space="preserve">
+    <value>ノーマル</value>
+  </data>
+  <data name="ズームToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>109, 22</value>
+  </data>
+  <data name="ズームToolStripMenuItem.Text" xml:space="preserve">
+    <value>ズーム</value>
+  </data>
+  <data name="ダイアグラム表示モードToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>167, 22</value>
+  </data>
+  <data name="ダイアグラム表示モードToolStripMenuItem.Text" xml:space="preserve">
+    <value>ダイアログ表示モード</value>
+  </data>
   <data name="表示ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 20</value>
   </data>
   <data name="表示ToolStripMenuItem.Text" xml:space="preserve">
     <value>表示</value>
+  </data>
+  <data name="バージョン情報ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>142, 22</value>
   </data>
   <data name="バージョン情報ToolStripMenuItem.Text" xml:space="preserve">
     <value>バージョン情報</value>
@@ -138,39 +195,6 @@
   </data>
   <data name="ヘルプToolStripMenuItem.Text" xml:space="preserve">
     <value>ヘルプ</value>
-  </data>
-  <data name="ファイルを開くToolStripMenuItem.Text" xml:space="preserve">
-    <value>新規作成</value>
-  </data>
-  <data name="開くToolStripMenuItem.Text" xml:space="preserve">
-    <value>開く</value>
-  </data>
-  <data name="保存ToolStripMenuItem.Text" xml:space="preserve">
-    <value>保存</value>
-  </data>
-  <data name="名前を付けて保存ToolStripMenuItem.Text" xml:space="preserve">
-    <value>名前を付けて保存</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="plantUMLの設定ToolStripMenuItem.Text" xml:space="preserve">
-    <value>設定</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 6</value>
-  </data>
-  <data name="終了ToolStripMenuItem.Text" xml:space="preserve">
-    <value>終了</value>
-  </data>
-  <data name="ダイアグラム表示モードToolStripMenuItem.Text" xml:space="preserve">
-    <value>ダイアログ表示モード</value>
-  </data>
-  <data name="ノーマルToolStripMenuItem.Text" xml:space="preserve">
-    <value>ノーマル</value>
-  </data>
-  <data name="ズームToolStripMenuItem.Text" xml:space="preserve">
-    <value>ズーム</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PFD エディタ</value>
