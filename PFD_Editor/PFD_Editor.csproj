@@ -75,7 +75,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IniFile.cs" />
     <Compile Include="JsonFile.cs" />
     <Compile Include="PfdItem.cs" />
     <Compile Include="MainForm.cs">

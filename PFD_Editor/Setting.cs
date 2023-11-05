@@ -11,12 +11,6 @@ namespace PFD_Editor
 {
     public class Setting
     {
-        public enum LanguageType
-        {
-            English,
-            Japanese,
-        }
-        public LanguageType languageType { get; set; }
         public string graphvizExe { get; set; }
         public string xmlFileName { get; set; }
         public string dotFileName { get; set; }
@@ -32,41 +26,14 @@ namespace PFD_Editor
 
         public void SaveSetting(string fileName)
         {
-            string lang;
-            switch (this.languageType)
-            {
-                case LanguageType.English:
-                default:
-                    lang = "en";
-                    break;
-
-                case LanguageType.Japanese:
-                    lang = "ja";
-                    break;
-            }
-            iniFile.SetString("language", lang);
             iniFile.SetString("exe", this.graphvizExe);
-            iniFile.SetString("dot", this.dotFileName);
-            iniFile.SetString("png", this.pngFileName);
         }
 
         public void LoadSetting(string fileName)
         {
-            string lang = iniFile.GetString("language", "");
-            switch (lang)
-            {
-                case "":
-                case "en":
-                default:
-                    this.languageType = LanguageType.English;
-                    break;
-                case "ja":
-                    this.languageType = LanguageType.Japanese;
-                    break;
-            }
             this.graphvizExe = iniFile.GetString("exe", "C:\\Program Files\\Graphviz\\bin\\dot.exe");
-            this.dotFileName = iniFile.GetString("dot", "temp.dot");
-            this.pngFileName = iniFile.GetString("png", "temp.png");
+            this.dotFileName = "temp.dot";
+            this.pngFileName = "temp.png";
             this.xmlFileName = "";
         }
     }
