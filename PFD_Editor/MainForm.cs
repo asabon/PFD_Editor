@@ -104,12 +104,12 @@ namespace PFD_Editor
                 process.id = int.Parse(processElement.Element("ID").Value);
                 process.subject = processElement.Element("Subject").Value;
                 process.description = processElement.Element("Description").Value;
-                foreach (XElement inputIdElement in processElement.Elements("Input"))
+                foreach (XElement inputIdElement in processElement.Elements("Inputs").Elements("InputID"))
                 {
                     int inputId = int.Parse(inputIdElement.Value);
                     process.inputIdList.Add(inputId);
                 }
-                foreach (XElement outputIdElement in processElement.Elements("Output"))
+                foreach (XElement outputIdElement in processElement.Elements("Outputs").Elements("OutputID"))
                 {
                     int outputId = int.Parse(outputIdElement.Value);
                     process.outputIdList.Add(outputId);
@@ -127,15 +127,15 @@ namespace PFD_Editor
             writer.WriteLine("<PFD>");
             foreach (PfdWorkProduct workProduct in workProducts)
             {
-                writer.WriteLine("    <WorkProductInfo>");
+                writer.WriteLine("    <WorkProduct>");
                 writer.WriteLine("        <ID>" + workProduct.id.ToString() + "</ID>");
                 writer.WriteLine("        <Subject>" + workProduct.subject + "</Subject>");
                 writer.WriteLine("        <Description>" + workProduct.description + "</Description>");
-                writer.WriteLine("    </WorkProductInfo>");
+                writer.WriteLine("    </WorkProduct>");
             }
             foreach (PfdProcess process in processes)
             {
-                writer.WriteLine("    <ProcessInfo>");
+                writer.WriteLine("    <Process>");
                 writer.WriteLine("        <ID>" + process.id.ToString() + "</ID>");
                 writer.WriteLine("        <Subject>" + process.subject + "</Subject>");
                 writer.WriteLine("        <Description>" + process.description + "</Description>");
@@ -151,7 +151,7 @@ namespace PFD_Editor
                     writer.WriteLine("            <OutputID>" + outputId + "</OutputID>");
                 }
                 writer.WriteLine("        </Outputs>");
-                writer.WriteLine("    </ProcessInfo>");
+                writer.WriteLine("    </Process>");
             }
             writer.WriteLine("</PFD>");
             writer.Close();
@@ -250,8 +250,6 @@ namespace PFD_Editor
 
         private void CreateWorkDotFile()
         {
-            //Encoding enc = Encoding.GetEncoding("Shift-JIS");
-            //StreamWriter writer = new StreamWriter(config.dotFileName, false, enc);
             StreamWriter writer = new StreamWriter(setting.dotFileName, false);
             writer.WriteLine("digraph PFD {");
             writer.WriteLine("    graph [");
