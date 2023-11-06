@@ -18,7 +18,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Setup nuget
-        uses: warrenbuckley/Setup-Nuget@1
+        uses: warrenbuckley/Setup-Nuget@v1
 
       - name: Debug build
         run: |
