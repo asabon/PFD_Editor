@@ -14,14 +14,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup nuget
+      # https://github.com/NuGet/setup-nuget
+      - name: Setup NuGet
         uses: nuget/setup-nuget@v1
         with:
           nuget-api-key: ${{ secrets.NuGetAPIKey }}
           nuget-version: '5.x'
-      - run: nuget restore PFD_Editor.sln
 
-      - name: Add msbuild to PATH
+      - name: Restore NuGet packages
+        run: nuget restore PFD_Editor.sln
+
+      - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Debug build
