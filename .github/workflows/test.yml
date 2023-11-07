@@ -38,7 +38,7 @@ jobs:
       - run: packages\altcover.8.6.68\tools\net472\altcover.exe
       - run: cd ./__Instrumented
       - run: pwd
-      - run: ls
+      - run: ls __Instrumented
       - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject.dll'
 
 #      - name: UnitTest
