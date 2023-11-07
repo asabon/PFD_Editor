@@ -28,7 +28,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Debug build
-        run: msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug /p:Platform="Any CPU"
+        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
       - run: pwd
       - run: ls PFD_Editor
       - run: ls UnitTestProject
