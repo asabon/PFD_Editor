@@ -14,7 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # https://github.com/NuGet/setup-nuget
       - name: Setup NuGet
         uses: nuget/setup-nuget@v1
         with:
@@ -29,23 +28,14 @@ jobs:
 
       - name: Debug build
         run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
-      - run: pwd
-      - run: ls PFD_Editor
-      - run: ls UnitTestProject
-      - run: ls UnitTestProject\obj
-      - run: ls UnitTestProject\obj\Debug
 
-      - name: UnitTest
+      - name: Execute AltCover
+        run: packages\altcover.8.6.68\tools\net472\altcover.exe
+
+      - name: UnitTest with Coverage
         run: |
-          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\obj\Debug\UnitTestProject.dll'
+          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
 
-      - run: packages\altcover.8.6.68\tools\net472\altcover.exe
-      - run: pwd
-      - run: ls UnitTestProject
-      - run: ls UnitTestProject\obj
-      - run: ls UnitTestProject\obj\Debug
-      - run: ls __Instrumented
-      - run: ls __Instrumented\UnitTestProject
-      - run: ls __Instrumented\UnitTestProject\obj
-      - run: ls __Instrumented\UnitTestProject\obj\Debug
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\obj\Debug\UnitTestProject.dll'
+#      - name: UnitTest
+#        run: |
+#          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\obj\Debug\UnitTestProject.dll'
