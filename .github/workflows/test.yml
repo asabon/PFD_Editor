@@ -35,9 +35,9 @@ jobs:
       - run: pwd
       - run: ls __Instrumented
       - run: ls __Instrumented\UnitTestProject
-      - run: ls __Instrumented\UnitTestProject\bin
-      - run: ls __Instrumented\UnitTestProject\bin\Debug
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
+      - run: ls __Instrumented\UnitTestProject\obj
+      - run: ls __Instrumented\UnitTestProject\obj\Debug
+      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\obj\Debug\UnitTestProject.dll'
 
 #      - name: UnitTest
 #        run: |
