@@ -28,8 +28,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Debug build
-        run: |
-          msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
+        run: msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
       - run: pwd
       - run: ls UnitTestProject
       - run: ls UnitTestProject\obj
@@ -37,13 +36,13 @@ jobs:
 
       - name: UnitTest
         run: |
-          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\bin\Debug\UnitTestProject.dll'
+          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\obj\Debug\UnitTestProject.dll'
 
       - run: packages\altcover.8.6.68\tools\net472\altcover.exe
       - run: pwd
       - run: ls UnitTestProject
       - run: ls __Instrumented
       - run: ls __Instrumented\UnitTestProject
-      - run: ls __Instrumented\UnitTestProject\bin
-      - run: ls __Instrumented\UnitTestProject\bin\Debug
-      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
+      - run: ls __Instrumented\UnitTestProject\obj
+      - run: ls __Instrumented\UnitTestProject\obj\Debug
+      - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\obj\Debug\UnitTestProject.dll'
