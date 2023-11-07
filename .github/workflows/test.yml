@@ -42,6 +42,7 @@ jobs:
       - run: pwd
       - run: ls UnitTestProject
       - run: ls UnitTestProject\obj
+      - run: ls UnitTestProject\obj\Debug
       - run: ls __Instrumented
       - run: ls __Instrumented\UnitTestProject
       - run: ls __Instrumented\UnitTestProject\obj
