@@ -36,6 +36,11 @@ jobs:
         run: |
           '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
 
+      - run: ls
+
+      - name: ReportGenerator
+        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport
+
 #      - name: UnitTest
 #        run: |
 #          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\obj\Debug\UnitTestProject.dll'
