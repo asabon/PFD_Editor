@@ -41,6 +41,7 @@ jobs:
       - run: packages\altcover.8.6.68\tools\net472\altcover.exe
       - run: pwd
       - run: ls UnitTestProject
+      - run: ls UnitTestProject\obj
       - run: ls __Instrumented
       - run: ls __Instrumented\UnitTestProject
       - run: ls __Instrumented\UnitTestProject\obj
