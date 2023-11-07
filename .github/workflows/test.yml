@@ -31,14 +31,12 @@ jobs:
         run: |
           msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
 
-      - run: cd UnitTestProject
-      - run: pwd
-      - run: ls packages
-      - run: ls packages\altcover.8.6.68
       - run: packages\altcover.8.6.68\tools\net472\altcover.exe
-      - run: cd ./__Instrumented
       - run: pwd
       - run: ls __Instrumented
+      - run: ls __Instrumented\UnitTestProject
+      - run: ls __Instrumented\UnitTestProject\bin
+      - run: ls __Instrumented\UnitTestProject\bin\Debug
       - run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
 
 #      - name: UnitTest
