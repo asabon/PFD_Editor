@@ -27,7 +27,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Debug build
-        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
+        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU" /p:AltCover=true /p:AltCoverPathFilter="?\.cs" /p:AltCoverLocalSource=true 
 
       - name: Execute AltCover
         run: packages\altcover.8.6.68\tools\net472\altcover.exe
