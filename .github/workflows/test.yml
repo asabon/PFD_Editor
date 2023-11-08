@@ -43,3 +43,9 @@ jobs:
         with:
           name: coverage-report
           path: .\CoverageReport
+
+      - name: Artifact coverage.xml
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage_xml
+          path: ./coverage.xml
