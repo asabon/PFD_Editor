@@ -27,10 +27,10 @@ jobs:
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Debug build
-        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU" /p:AltCoverLocalSource=true
+        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
 
       - name: Execute AltCover
-        run: packages\altcover.8.6.68\tools\net472\altcover.exe /i="UnitTestProject/bin/Debug" /o="__Instrumented/UnitTestProject/bin/Debug"
+        run: packages\altcover.8.6.68\tools\net472\altcover.exe /i="UnitTestProject/bin/Debug" /o="__Instrumented/UnitTestProject/bin/Debug" -l
 
       - name: UnitTest with Coverage
         run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
