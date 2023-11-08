@@ -36,20 +36,22 @@ jobs:
         run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
 
       - name: ReportGenerator json
-        uses: danielpalme/ReportGenerator-GitHub-Action@5.1.26
-        with:
-          reports: 'coverage.json'
-          targetdir: 'CoverageReport'
-          reporttypes: 'JsonSummary'
-
-      - name: ReportGenerator json
         run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport
 
-      - name: Artifact coverage report
+      - name: ReportGenerator json
+        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReportJson -reporttypes:JsonSummary;Badges
+
+      - name: Artifact coverage report html
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report
           path: .\CoverageReport
+
+      - name: Artifact coverage report json
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report-json
+          path: .\CoverageReportJson
 
       - name: Artifact coverage.xml
         uses: actions/upload-artifact@v3
