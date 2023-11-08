@@ -36,7 +36,7 @@ jobs:
         run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
 
       - name: ReportGenerator
-        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:Html;JsonSummary;Badges
+        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:Badges
 
       - name: Artifact coverage report
         uses: actions/upload-artifact@v3
