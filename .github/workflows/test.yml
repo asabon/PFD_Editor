@@ -33,7 +33,7 @@ jobs:
         run: packages\altcover.8.6.68\tools\net472\altcover.exe /i="UnitTestProject/bin/Debug" /o="__Instrumented/UnitTestProject/bin/Debug"
 
       - name: UnitTest with Coverage
-        run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
+        run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll' /p:AltCoverLocalSource=true
 
       - name: ReportGenerator
         run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport
