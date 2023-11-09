@@ -78,23 +78,34 @@ namespace UnitTestProject
         }
 
         [TestMethod]
-        public void TestMethod_Constructor()
+        public void Test_JsonFile_Sequence001()
         {
             string testFileName = "test01.json";
-            File.Delete(testFileName);
-            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testFileName);
             string value;
+
+            // Setup
+            File.Delete(testFileName);
+
+            // Create instance
+            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testFileName);
+
             value = jsonFile.GetString("param1", "value0");
             Assert.AreEqual("value0", value);
 
             jsonFile.SetString("param1", "value1");
+
+            value = jsonFile.GetString("param1", "value0");
+            Assert.AreEqual("value1", value);
+
+            PFD_Editor.JsonFile jsonFile2 = new PFD_Editor.JsonFile(testFileName);
+
             value = jsonFile.GetString("param1", "value0");
             Assert.AreEqual("value1", value);
 
             jsonFile.Save();
 
+            // Tear down
             File.Delete(testFileName);
         }
-
     }
 }
