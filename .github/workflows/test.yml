@@ -12,15 +12,47 @@ jobs:
     runs-on: windows-2019
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
-      - name: Add msbuild to PATH
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-api-key: ${{ secrets.NuGetAPIKey }}
+          nuget-version: '5.x'
+
+      - name: Restore NuGet packages
+        run: nuget restore PFD_Editor.sln
+
+      - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v1.3.1
 
       - name: Debug build
-        run: |
-          msbuild PFD_Editor.sln /t:clean /p:Configuration=Debug
+        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
 
-      - name: UnitTest
-        run: |
-          '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:UnitTestProject\bin\Debug\UnitTestProject.dll'
+      - name: Execute AltCover
+        run: packages\altcover.8.6.68\tools\net472\altcover.exe /i="UnitTestProject/bin/Debug" /o="__Instrumented/UnitTestProject/bin/Debug" -l
+
+      - name: UnitTest with Coverage
+        run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
+
+      - name: ReportGenerator
+        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:'MarkdownSummary;JsonSummary;Badges'
+
+      - name: Artifact coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: .\CoverageReport
+
+      - name: Artifact coverage.xml
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage_xml
+          path: ./coverage.xml
+
+      - name: Add Coverage PR Comment
+        uses: marocchino/sticky-pull-request-comment@v2
+        if: github.event_name == 'pull_request'
+        with:
+          recreate: true
+          path: CoverageReport/Summary.md
