@@ -36,7 +36,7 @@ jobs:
         run: '& "$(vswhere -property installationPath)\Common7\IDE\mstest.exe" /testcontainer:__Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll'
 
       - name: ReportGenerator
-        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:'JsonSummary;Badges'
+        run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:'MarkdownSummary;JsonSummary;Badges'
 
       - name: Artifact coverage report
         uses: actions/upload-artifact@v3
@@ -55,4 +55,4 @@ jobs:
         if: github.event_name == 'pull_request'
         with:
           recreate: true
-          path: coverage.xml
+          path: CoverageReport/Summary.md
