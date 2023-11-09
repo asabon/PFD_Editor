@@ -6,11 +6,11 @@ using System.IO;
 namespace UnitTestProject
 {
     [TestClass]
-    public class TestJsonFile
+    public class UnitTest2
     {
         [TestInitialize]
         public void TestInitialize()
-        { 
+        {
             // Do nothing
         }
 
