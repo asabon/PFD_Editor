@@ -11,7 +11,7 @@ using System.IO;
 
 namespace PFD_Editor
 {
-    internal class JsonFile
+    public class JsonFile
     {
         private string jsonFileName { get; set; }
         private Dictionary<string, string> dict { get; set; }
