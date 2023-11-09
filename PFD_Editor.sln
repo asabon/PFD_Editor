@@ -20,7 +20,6 @@ Global
 		{83F80D40-4F66-46C6-9843-2C41A9DF1CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{83F80D40-4F66-46C6-9843-2C41A9DF1CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83F80D40-4F66-46C6-9843-2C41A9DF1CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{83F80D40-4F66-46C6-9843-2C41A9DF1CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

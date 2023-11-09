@@ -6,7 +6,7 @@ using System.IO;
 namespace UnitTestProject
 {
     [TestClass]
-    public class UnitTest2
+    public class TestJsonFile
     {
         [TestInitialize]
         public void TestInitialize()
