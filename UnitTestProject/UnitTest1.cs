@@ -76,5 +76,25 @@ namespace UnitTestProject
             Assert.AreEqual(pfdWorkProductOriginal.description, pfdWorkProduct.description);
             Assert.AreEqual(PfdItem.PfdItemType.WorkProduct, pfdWorkProduct.type);
         }
+
+        [TestMethod]
+        public void TestMethod_Constructor()
+        {
+            string testFileName = "test01.json";
+            File.Delete(testFileName);
+            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testFileName);
+            string value;
+            value = jsonFile.GetString("param1", "value0");
+            Assert.AreEqual("value0", value);
+
+            jsonFile.SetString("param1", "value1");
+            value = jsonFile.GetString("param1", "value0");
+            Assert.AreEqual("value1", value);
+
+            jsonFile.Save();
+
+            File.Delete(testFileName);
+        }
+
     }
 }
