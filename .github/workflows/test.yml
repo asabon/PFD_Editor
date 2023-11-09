@@ -38,8 +38,6 @@ jobs:
       - name: ReportGenerator
         run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:'JsonSummary;Badges'
 
-      - run: ls .\CoverageReport
-
       - name: Artifact coverage report
         uses: actions/upload-artifact@v3
         with:
