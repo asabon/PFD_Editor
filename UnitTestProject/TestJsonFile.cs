@@ -11,6 +11,18 @@ namespace UnitTestProject
     [TestClass]
     public class TestJsonFile
     {
+        [TestInitialize]
+        public void TestInitialize()
+        { 
+            // Do nothing
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            // Do nothing
+        }
+
         [TestMethod]
         public void Test_Constructor()
         {
