@@ -58,6 +58,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestJsonFile.cs" />
     <Compile Include="TestPfdItem.cs" />
     <Compile Include="TestPfdProcess.cs" />
     <Compile Include="TestPfdWorkProduct.cs" />
