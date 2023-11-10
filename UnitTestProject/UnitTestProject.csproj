@@ -62,6 +62,7 @@
     <Compile Include="TestPfdItem.cs" />
     <Compile Include="TestPfdProcess.cs" />
     <Compile Include="TestPfdWorkProduct.cs" />
+    <Compile Include="TestSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
