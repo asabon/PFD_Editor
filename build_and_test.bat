@@ -19,4 +19,4 @@ set REPORT_GENERATOR_EXE="packages\ReportGenerator.5.1.26\tools\net47\ReportGene
 %VSTEST_CONSOLE_EXE% __Instrumented\UnitTestProject\bin\Debug\UnitTestProject.dll
 
 :: ReportGenerator
-%REPORT_GENERATOR_EXE% -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:"Html;MarkdownSummaryGithub;JsonSummary;Badges"
+%REPORT_GENERATOR_EXE% -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:"Html"

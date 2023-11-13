@@ -56,12 +56,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TestJsonFile.cs" />
     <Compile Include="TestMainForm.cs" />
     <Compile Include="TestPfdItem.cs" />
     <Compile Include="TestPfdProcess.cs" />
+    <Compile Include="TestPfdProcessEditor.cs" />
     <Compile Include="TestPfdWorkProduct.cs" />
     <Compile Include="TestSetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

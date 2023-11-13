@@ -8,53 +8,70 @@ namespace UnitTestProject
     [TestClass]
     public class TestJsonFile
     {
+        private string testJsonFile = "sample.json";
+
         [TestInitialize]
         public void TestInitialize()
         {
-            // Do nothing
+            // Setup
+            File.Delete(testJsonFile);
         }
 
         [TestCleanup]
         public void TestCleanup()
         {
-            // Do nothing
+            File.Delete(testJsonFile);
         }
 
         [TestMethod]
         public void Test_Constructor()
         {
-            PFD_Editor.JsonFile jsonFile = new JsonFile("sample.json");
+            PFD_Editor.JsonFile jsonFile = new JsonFile(testJsonFile);
+            Assert.AreNotEqual(null, jsonFile);
         }
 
         [TestMethod]
-        public void Test_JsonFile_Sequence001()
+        public void Test_Save_001()
         {
-            string testFileName = "test01.json";
+        }
+
+        [TestMethod]
+        public void Test_Load_001()
+        {
+        }
+
+        [TestMethod]
+        public void Test_GetString_001()
+        {
             string value;
+            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testJsonFile);
 
-            // Setup
-            File.Delete(testFileName);
-
-            // Create instance
-            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testFileName);
-
+            // GetString() from empty parameter.
             value = jsonFile.GetString("param1", "value0");
             Assert.AreEqual("value0", value);
+        }
 
+        [TestMethod]
+        public void Test_GetString_002()
+        {
+            string value;
+            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testJsonFile);
             jsonFile.SetString("param1", "value1");
 
+            // GetString() from exist(param1 = value1) parameter.
             value = jsonFile.GetString("param1", "value0");
             Assert.AreEqual("value1", value);
+        }
 
-            PFD_Editor.JsonFile jsonFile2 = new PFD_Editor.JsonFile(testFileName);
+        [TestMethod]
+        public void Test_SetString_001()
+        {
+            string value;
+            PFD_Editor.JsonFile jsonFile = new PFD_Editor.JsonFile(testJsonFile);
+            jsonFile.SetString("param1", "value2");
 
             value = jsonFile.GetString("param1", "value0");
-            Assert.AreEqual("value1", value);
-
-            jsonFile.Save();
-
-            // Tear down
-            File.Delete(testFileName);
+            Assert.AreEqual("value2", value);
         }
     }
 }
