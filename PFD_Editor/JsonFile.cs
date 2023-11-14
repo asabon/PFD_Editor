@@ -11,7 +11,7 @@ using System.IO;
 
 namespace PFD_Editor
 {
-    internal class JsonFile
+    public class JsonFile
     {
         private string jsonFileName { get; set; }
         private Dictionary<string, string> dict { get; set; }
@@ -24,24 +24,20 @@ namespace PFD_Editor
 
         public string GetString(string name, string defaultValue)
         {
-            try
-            {
-                return this.dict[name];
-            }
-            catch (KeyNotFoundException e)
+            if (dict.ContainsKey(name) != true)
             {
                 SetString(name, defaultValue);
-                return this.dict[name];
             }
+            return this.dict[name];
         }
 
         public void SetString(string name, string value)
         {
-            try
+            if (dict.ContainsKey(name))
             {
                 this.dict[name] = value;
             }
-            catch (KeyNotFoundException e)
+            else
             {
                 this.dict.Add(name, value);
             }
@@ -58,17 +54,17 @@ namespace PFD_Editor
         public bool Load()
         {
             this.dict = new Dictionary<string, string>();
-            try
+            if (File.Exists(this.jsonFileName))
             {
                 StreamReader sr = new StreamReader(this.jsonFileName);
                 this.dict = ToDict(sr.ReadToEnd());
                 sr.Close();
+                return true;
             }
-            catch(FileNotFoundException e)
+            else
             {
                 return false;
             }
-            return true;
         }
 
         private static string ToJson(Dictionary<string, string> dict)
