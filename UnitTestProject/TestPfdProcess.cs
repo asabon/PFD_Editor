@@ -24,18 +24,22 @@ namespace UnitTestProject
             pfdProcessOriginal.id = 1;
             pfdProcessOriginal.subject = "aaa";
             pfdProcessOriginal.description = "bbb";
-            pfdProcessOriginal.inputIdList = new System.Collections.Generic.List<int>();
-            pfdProcessOriginal.inputIdList.Add(1);
-            pfdProcessOriginal.inputIdList.Add(2);
-            pfdProcessOriginal.inputIdList.Add(3);
-            pfdProcessOriginal.inputIdList.Add(4);
-            pfdProcessOriginal.inputIdList.Add(5);
-            pfdProcessOriginal.outputIdList = new System.Collections.Generic.List<int>();
-            pfdProcessOriginal.outputIdList.Add(11);
-            pfdProcessOriginal.outputIdList.Add(12);
-            pfdProcessOriginal.outputIdList.Add(13);
-            pfdProcessOriginal.outputIdList.Add(14);
-            pfdProcessOriginal.outputIdList.Add(15);
+            pfdProcessOriginal.inputIdList = new System.Collections.Generic.List<int>
+            {
+                1,
+                2,
+                3,
+                4,
+                5
+            };
+            pfdProcessOriginal.outputIdList = new System.Collections.Generic.List<int>
+            {
+                11,
+                12,
+                13,
+                14,
+                15
+            };
             PFD_Editor.PfdProcess pfdProcess = new PFD_Editor.PfdProcess(pfdProcessOriginal);
             Assert.AreEqual(pfdProcessOriginal.id, pfdProcess.id);
             Assert.AreEqual(pfdProcessOriginal.subject, pfdProcess.subject);
