@@ -60,13 +60,24 @@ jobs:
           recreate: true
           path: CoverageReport/SummaryGithub.md
 
-      - name: Push badges to master_badges branch
+      - name: Add badges (in case of push)
         if: github.event_name == 'push'
         run: |
           mkdir badges
           cp CoverageReport/badge_combined.svg badges/
-          git config user.name auto-push
-          git config user.email auto-push@example.com
-          git add badges
-          git commit -m "auto push from ci" || echo no commits
-          git push
+
+      - name: Create Pull Request (in case of push)
+        if: github.event_name == 'push'
+        id: create-pull-request
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PULL_REQUEST_URI=$(gh pr create -B stage -t auto merge -l 'auto merge' -b "")
+          echo "::set-output name=PULL_REQUEST_URI::$PULL_REQUEST_URI"
+
+      - name: Merge Pull Request (in case of push)
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge ${{steps.create-pull-request.outputs.PULL_REQUEST_URI}} --merge
