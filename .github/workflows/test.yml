@@ -72,7 +72,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PULL_REQUEST_URI=$(gh pr create -B stage -t auto merge -l 'auto merge' -b "")
+          PULL_REQUEST_URI=$(gh pr create -B master -t auto merge -l 'auto merge' -b "")
           echo "::set-output name=PULL_REQUEST_URI::$PULL_REQUEST_URI"
 
       - name: Merge Pull Request (in case of push)
