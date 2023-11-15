@@ -4,6 +4,7 @@ name: Test
 on:
   push:
     branches: [ "master" ]
+    paths-ignore: [ "badges" ]
   pull_request:
     branches: [ "master" ]
 
@@ -58,3 +59,14 @@ jobs:
         with:
           recreate: true
           path: CoverageReport/SummaryGithub.md
+
+      - name: Push badges to master_badges branch
+        if: github.event_name == 'push'
+        run: |
+          mkdir badges
+          cp CoverageReport/badge_combined.svg badges/
+          git config user.name auto-push
+          git config user.email auto-push@example.com
+          git add badges
+          git commit -m "auto push from ci" || echo no commits
+          git push
