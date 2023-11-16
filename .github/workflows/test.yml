@@ -41,13 +41,13 @@ jobs:
 
       - run: ls CoverageReport
 
-      - name: Artifact coverage report
+      - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
           name: coverage-report
           path: .\CoverageReport
 
-      - name: Artifact coverage.xml
+      - name: Upload coverage.xml
         uses: actions/upload-artifact@v3
         with:
           name: coverage_xml
@@ -60,13 +60,26 @@ jobs:
           recreate: true
           path: CoverageReport/SummaryGithub.md
 
-      - name: Add badges (in case of push)
+  report:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download coverage report
+        if: github.event_name == 'push'
+        uses: actions/download-artifact@v3
+        with:
+          name: coverage-report
+
+      - name: Add badges
         if: github.event_name == 'push'
         run: |
           mkdir badges
           cp CoverageReport/badge_combined.svg badges/
 
-      - name: Create Pull Request (in case of push)
+      - name: Create Pull Request
         if: github.event_name == 'push'
         id: create-pull-request
         run: |
@@ -75,7 +88,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
-      - name: Merge Pull Request (in case of push)
+      - name: Merge Pull Request
         if: github.event_name == 'push'
         run: |
           gh pr merge ${{steps.create-pull-request.outputs.PULL_REQUEST_URI}} --merge
