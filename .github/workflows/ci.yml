@@ -89,16 +89,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - run: ls
+
       - name: Download coverage report
         if: github.event_name == 'push'
         uses: actions/download-artifact@v3
         with:
           name: coverage-report
 
+      - run: ls
+
       - name: Add badges
         if: github.event_name == 'push'
         run: |
-          ls
           mkdir badges
           cp CoverageReport/badge_combined.svg badges/
 
