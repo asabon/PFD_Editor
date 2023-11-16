@@ -30,11 +30,6 @@ jobs:
       - name: Release build
         run: msbuild PFD_Editor.sln /p:Configuration=Release /p:Platform="Any CPU"
 
-      - run: ls
-      - run: ls PFD_Editor
-      - run: ls PFD_Editor\bin
-      - run: ls PFD_Editor\bin\Release
-
       - name: Upload release package
         uses: actions/upload-artifact@v3
         with:
@@ -104,24 +99,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - run: ls
-
       - name: Download coverage report
         uses: actions/download-artifact@v3
         with:
           name: coverage-report
           path: ./CoverageReport
 
-      - run: ls
-
-      - run: ls CoverageReport
-
       - name: Add badges
         run: |
-          mkdir badges
+          mkdir -p badges
           cp CoverageReport/badge_combined.svg badges/
 
-      - run: ls CoverageReport
+      - name: Push to badges branch
+        uses: s0/git-publish-subdir-action@master
+        env:
+          REPO: self
+          BRANCH: badges
+          FOLDER: badges
 
 #      - name: Create Pull Request
 #        id: create-pull-request
