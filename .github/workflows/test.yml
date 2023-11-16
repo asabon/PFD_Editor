@@ -76,6 +76,7 @@ jobs:
       - name: Add badges
         if: github.event_name == 'push'
         run: |
+          ls
           mkdir badges
           cp CoverageReport/badge_combined.svg badges/
 
@@ -94,4 +95,3 @@ jobs:
           gh pr merge ${{steps.create-pull-request.outputs.PULL_REQUEST_URI}} --merge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
