@@ -83,6 +83,7 @@ jobs:
           path: CoverageReport/SummaryGithub.md
 
   report:
+    if: github.event_name == 'push'
     needs: unittest
     runs-on: ubuntu-latest
     env:
@@ -95,28 +96,28 @@ jobs:
       - run: ls
 
       - name: Download coverage report
-        if: github.event_name == 'push'
         uses: actions/download-artifact@v3
         with:
           name: coverage-report
-          path: .\CoverageReport
+          path: ./CoverageReport
 
       - run: ls
 
+      - run: ls CoverageReport
+
       - name: Add badges
-        if: github.event_name == 'push'
         run: |
           mkdir badges
           cp CoverageReport/badge_combined.svg badges/
 
-      - name: Create Pull Request
-        if: github.event_name == 'push'
-        id: create-pull-request
-        run: |
-          PULL_REQUEST_URI=$(gh pr create -B stage -t auto merge -l 'auto merge' -b "")
-          echo "::set-output name=PULL_REQUEST_URI::$PULL_REQUEST_URI"
-  
-      - name: Merge Pull Request
-        if: github.event_name == 'push'
-        run: |
-          gh pr merge ${{steps.create-pull-request.outputs.PULL_REQUEST_URI}} --merge
+      - run: ls CoverageReport
+
+#      - name: Create Pull Request
+#        id: create-pull-request
+#        run: |
+#          PULL_REQUEST_URI=$(gh pr create -B stage -t auto merge -l 'auto merge' -b "")
+#          echo "::set-output name=PULL_REQUEST_URI::$PULL_REQUEST_URI"
+#  
+#      - name: Merge Pull Request
+#        run: |
+#          gh pr merge ${{steps.create-pull-request.outputs.PULL_REQUEST_URI}} --merge
