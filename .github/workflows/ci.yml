@@ -83,7 +83,7 @@ jobs:
           path: CoverageReport/SummaryGithub.md
 
   report:
-    needs: build
+    needs: unittest
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
