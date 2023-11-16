@@ -1,5 +1,5 @@
 
-name: Test
+name: CI
 
 on:
   push:
@@ -10,6 +10,30 @@ on:
 
 jobs:
   build:
+    runs-on: windows-2019
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-api-key: ${{ secrets.NuGetAPIKey }}
+          nuget-version: '5.x'
+
+      - name: Restore NuGet packages
+        run: nuget restore PFD_Editor.sln
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.3.1
+
+      - name: Release build
+        run: msbuild PFD_Editor.sln /p:Configuration=Release /p:Platform="Any CPU"
+
+      - name: Debug build
+        run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
+
+  unittest:
     runs-on: windows-2019
     steps:
       - name: Checkout
@@ -39,8 +63,6 @@ jobs:
       - name: ReportGenerator
         run: packages\ReportGenerator.5.1.26\tools\net47\ReportGenerator.exe -reports:coverage.xml -targetdir:.\CoverageReport -reporttypes:'Html;MarkdownSummaryGithub;JsonSummary;Badges'
 
-      - run: ls CoverageReport
-
       - name: Upload coverage report
         uses: actions/upload-artifact@v3
         with:
@@ -67,16 +89,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - run: ls
+
       - name: Download coverage report
         if: github.event_name == 'push'
         uses: actions/download-artifact@v3
         with:
           name: coverage-report
 
+      - run: ls
+
       - name: Add badges
         if: github.event_name == 'push'
         run: |
-          ls
           mkdir badges
           cp CoverageReport/badge_combined.svg badges/
 
