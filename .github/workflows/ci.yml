@@ -85,6 +85,9 @@ jobs:
   report:
     needs: unittest
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -96,6 +99,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: coverage-report
+          path: .\CoverageReport
 
       - run: ls
 
@@ -111,12 +115,8 @@ jobs:
         run: |
           PULL_REQUEST_URI=$(gh pr create -B stage -t auto merge -l 'auto merge' -b "")
           echo "::set-output name=PULL_REQUEST_URI::$PULL_REQUEST_URI"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
       - name: Merge Pull Request
         if: github.event_name == 'push'
         run: |
           gh pr merge ${{steps.create-pull-request.outputs.PULL_REQUEST_URI}} --merge
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
