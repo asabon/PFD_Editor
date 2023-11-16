@@ -30,6 +30,17 @@ jobs:
       - name: Release build
         run: msbuild PFD_Editor.sln /p:Configuration=Release /p:Platform="Any CPU"
 
+      - run: ls
+      - run: ls PFD_Editor
+      - run: ls PFD_Editor\bin
+      - run: ls PFD_Editor\bin\Release
+
+      - name: Upload release package
+        uses: actions/upload-artifact@v3
+        with:
+          name: PFD_Editor
+          path: PFD_Editor\bin\Release
+
       - name: Debug build
         run: msbuild PFD_Editor.sln /p:Configuration=Debug /p:Platform="Any CPU"
 
