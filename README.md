@@ -1,5 +1,5 @@
 [![CI](https://github.com/asabon/PFD_Editor/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/asabon/PFD_Editor/actions/workflows/ci.yml)
-
+![Coverage](https://github.com/asabon/PFD_Editor/blob/badges/badge_combined.svg)
 # PFD_Editor
 
 ## Overview
