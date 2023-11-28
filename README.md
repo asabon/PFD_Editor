@@ -48,3 +48,4 @@ Set graphviz (dot.exe) path to PFD Editor by following menu.
 
 ## License
 
+This project is licensed under the MIT License, see the LICENSE file for details.
